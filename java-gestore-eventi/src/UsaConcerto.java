@@ -55,11 +55,11 @@ public class UsaConcerto {
         if(sceltaPrenota.equals("si")) {
         System.out.print("quante prenotazioni vuoi prenotare ?: ");
         int numeroScelta = scan.nextInt();
-        for (int i = 0; i < numeroScelta; i++) {
+        for (int i = 0; i <= numeroScelta; i++) {
             try {
                 c1.prenota();
             } catch (PrenotaException e){
-                System.err.println("errore: " + "prenotazione: " + i + " fallita " +  e.getMessage());
+                System.err.println("errore: " + "prenotazione: " + (i + 1) + " fallita " +  e.getMessage());
                 break;
             }
         }
@@ -74,11 +74,11 @@ public class UsaConcerto {
         if (sceltaDisdici.equals("si")) {
             System.out.print("quante disdette vuoi effettuare ?: ");
             int numeroScelta = scan.nextInt();
-            for (int i = 0; i < numeroScelta; i++) {
+            for (int i = 0; i <= numeroScelta; i++) {
                 try {
                     c1.disdici();
                 } catch (DisdiciException e) {
-                    System.err.println("errore: " + "disdetta: " + i + " fallita " +  e.getMessage());
+                    System.err.println("errore: " + "disdetta: " + (i + 1) + " fallita " +  e.getMessage());
                     break;
                 }
             }
