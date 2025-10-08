@@ -85,8 +85,6 @@ public class UsaConcerto {
             }
         }
 
-        scan.nextLine();
-
         System.out.println("\nprenotati: " + c1.getNumeroPostiPrenotati() + " disponibili: " + c1.getPostiDisponibili());
 
         System.out.print("vuoi disdire qualche prenotazione ?(si/no): ");
