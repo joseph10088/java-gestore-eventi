@@ -15,7 +15,13 @@ public class Concerto extends Evento{
 
     public Concerto(String titolo, LocalDate data, int numeroPostiTot, LocalTime ora, double prezzo) {
         super(titolo, data, numeroPostiTot);
-        this.ora = ora;
+        if(getData().isBefore(LocalDate.now())){
+            throw new IllegalArgumentException("non e possibile modificare l'ora l'evento e gia passato !");
+        } else if(ora == null){
+            throw new IllegalArgumentException("l'ora non puo essere nulla !");
+        } else {
+            this.ora = ora;
+        }
         if(prezzo < 0){
             throw new IllegalArgumentException("il prezzo non può essere negativo");
         }
@@ -31,6 +37,8 @@ public class Concerto extends Evento{
     public void setOra(LocalTime ora) {
         if(getData().isBefore(LocalDate.now())){
             throw new IllegalArgumentException("non e possibile modificare l'ora l'evento e gia passato !");
+        } else if(ora == null){
+            throw new IllegalArgumentException("l'ora non puo essere nulla !");
         }
         this.ora = ora;
     }

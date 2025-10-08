@@ -6,4 +6,7 @@ public class PrenotaException extends Exception {
         super(messaggio);
     }
     
+    public PrenotaException(){
+        super();
+    }
 }

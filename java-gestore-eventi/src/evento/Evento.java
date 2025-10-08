@@ -16,11 +16,13 @@ public class Evento {
     private int numeroPostiPrenotati;
 
     public Evento(String titolo, LocalDate data, int numeroPostiTot) {
+
         if(titolo == null || titolo.isBlank()){
             throw new IllegalArgumentException("il titolo e obbligatorio !");
         } else {
             this.titolo = titolo;
         }
+
         if(data == null){
             throw new IllegalArgumentException("La data non può essere nulla !");
         } else if(data.isBefore(LocalDate.now())) {
@@ -28,6 +30,7 @@ public class Evento {
         } else {
             this.data = data;
         }
+
         if(numeroPostiTot <= 0){
             throw new IllegalArgumentException("non e possibile avere minore oppure zero posti !");
         } else {
